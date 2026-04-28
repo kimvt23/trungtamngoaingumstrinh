@@ -1,14 +1,17 @@
-import gClassroom from "@/assets/photo-classroom.jpg";
-import gIelts from "@/assets/photo-ielts.jpg";
-import gEvent from "@/assets/photo-event.jpg";
+import g1 from "@/assets/photo-w1.jpg";
+import g2 from "@/assets/photo-w2.jpg";
+import g3 from "@/assets/photo-w3.jpg";
+import g4 from "@/assets/photo-w4.jpg";
+import g5 from "@/assets/photo-w5.jpg";
+import g6 from "@/assets/photo-w6.jpg";
 
 const images = [
-  { src: gClassroom, alt: "Happy students celebrating in our classroom", className: "lg:col-span-2 lg:row-span-2" },
-  { src: gIelts, alt: "Student receiving IELTS test report at Ms Trinh IELTS center" },
-  { src: gEvent, alt: "Community event with students and families outside the center", className: "lg:row-span-2" },
-  { src: gClassroom, alt: "Students raising hands in class" },
-  { src: gIelts, alt: "Proud IELTS achievement moment" },
-  { src: gEvent, alt: "Outdoor celebration with balloons", className: "lg:col-span-2" },
+  { src: g1, alt: "Học viên Ms Trinh nhận chứng nhận thành tích", className: "lg:col-span-2 lg:row-span-2" },
+  { src: g2, alt: "Học viên đạt điểm tối đa Cambridge" },
+  { src: g4, alt: "Hoạt động ngoại khóa cùng học sinh", className: "lg:row-span-2" },
+  { src: g5, alt: "Lớp học mầm non vui nhộn tại Ms Trinh" },
+  { src: g3, alt: "Hoạt động Halloween thú vị cho bé" },
+  { src: g6, alt: "Lớp học IELTS với giáo viên bản ngữ", className: "lg:col-span-2" },
 ];
 
 export const Gallery = () => {
@@ -16,12 +19,12 @@ export const Gallery = () => {
     <section id="gallery" className="py-20 lg:py-28 gradient-soft">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Our community</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Cộng đồng của chúng tôi</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Moments from our <span className="text-gradient">classrooms</span>
+            Khoảnh khắc tại <span className="text-gradient">lớp học</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Step inside Sunrise — joyful learning, focused study, and proud achievements.
+            Bước vào Ms Trinh — học tập vui vẻ, tập trung và những thành tích đáng tự hào.
           </p>
         </div>
 
