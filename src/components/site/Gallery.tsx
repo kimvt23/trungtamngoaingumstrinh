@@ -1,17 +1,14 @@
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import gClassroom from "@/assets/photo-classroom.jpg";
+import gIelts from "@/assets/photo-ielts.jpg";
+import gEvent from "@/assets/photo-event.jpg";
 
 const images = [
-  { src: g1, alt: "Kindergarten class learning the alphabet", className: "lg:col-span-2 lg:row-span-2" },
-  { src: g2, alt: "Teen students studying with laptops" },
-  { src: g3, alt: "Adult communication class" },
-  { src: g4, alt: "Teacher giving high five" },
-  { src: g5, alt: "IELTS preparation class" },
-  { src: g6, alt: "Graduation celebration", className: "lg:col-span-2" },
+  { src: gClassroom, alt: "Happy students celebrating in our classroom", className: "lg:col-span-2 lg:row-span-2" },
+  { src: gIelts, alt: "Student receiving IELTS test report at Ms Trinh IELTS center" },
+  { src: gEvent, alt: "Community event with students and families outside the center", className: "lg:row-span-2" },
+  { src: gClassroom, alt: "Students raising hands in class" },
+  { src: gIelts, alt: "Proud IELTS achievement moment" },
+  { src: gEvent, alt: "Outdoor celebration with balloons", className: "lg:col-span-2" },
 ];
 
 export const Gallery = () => {
