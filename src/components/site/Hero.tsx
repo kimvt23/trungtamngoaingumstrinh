@@ -1,5 +1,5 @@
 import { ArrowRight, PhoneCall, Star, Users, GraduationCap } from "lucide-react";
-import heroImg from "@/assets/hero-classroom.jpg";
+import heroImg from "@/assets/photo-classroom.jpg";
 
 export const Hero = () => {
   return (
