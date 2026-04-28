@@ -1,9 +1,9 @@
 import { MapPin, Navigation } from "lucide-react";
 
 const branches = [
-  { code: "CN1", address: "218 Nguyen Huu Tho", city: "Ba Ria", gradient: "gradient-warm" },
-  { code: "CN2", address: "492 Dien Bien Phu, Long Toan", city: "Ba Ria", gradient: "gradient-pink" },
-  { code: "CN3", address: "420 Truong Cong Dinh", city: "Vung Tau", gradient: "gradient-warm" },
+  { code: "CN1", address: "218 Nguyễn Hữu Thọ", city: "Bà Rịa", gradient: "gradient-warm" },
+  { code: "CN2", address: "492 Điện Biên Phủ, Long Toàn", city: "Bà Rịa", gradient: "gradient-pink" },
+  { code: "CN3", address: "420 Trương Công Định", city: "Vũng Tàu", gradient: "gradient-warm" },
 ];
 
 export const Branches = () => {
@@ -11,12 +11,12 @@ export const Branches = () => {
     <section id="branches" className="py-20 lg:py-28">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Find us</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Tìm chúng tôi</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Three branches across <span className="text-gradient">Ba Ria & Vung Tau</span>
+            Ba chi nhánh tại <span className="text-gradient">Bà Rịa & Vũng Tàu</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Visit the campus closest to you — we'd love to give you a tour.
+            Hãy ghé thăm chi nhánh gần bạn nhất — chúng tôi rất mong được đón tiếp bạn.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const Branches = () => {
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all"
               >
-                <Navigation className="h-4 w-4" /> Get directions
+                <Navigation className="h-4 w-4" /> Chỉ đường
               </a>
             </article>
           ))}

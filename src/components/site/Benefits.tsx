@@ -3,26 +3,26 @@ import { BadgePercent, BookOpen, ClipboardCheck, GraduationCap } from "lucide-re
 const benefits = [
   {
     icon: BadgePercent,
-    title: "10% discount on special months",
-    desc: "Enjoy seasonal promotions with up to 10% off tuition during selected months of the year.",
+    title: "Giảm 10% học phí tháng đặc biệt",
+    desc: "Nhận ưu đãi hấp dẫn lên đến 10% học phí trong các tháng khuyến mãi đặc biệt trong năm.",
     gradient: "gradient-warm",
   },
   {
     icon: BookOpen,
-    title: "Free learning materials",
-    desc: "Get books, workbooks, and online resources at no extra cost during selected enrollment periods.",
+    title: "Tặng tài liệu học miễn phí",
+    desc: "Nhận sách, vở bài tập và tài liệu online hoàn toàn miễn phí trong các đợt đăng ký đặc biệt.",
     gradient: "gradient-pink",
   },
   {
     icon: ClipboardCheck,
-    title: "Free school exam review lessons",
-    desc: "Special review sessions to help students prepare for school tests — completely free of charge.",
+    title: "Ôn thi trên trường miễn phí",
+    desc: "Buổi ôn tập đặc biệt giúp học sinh chuẩn bị tốt cho các bài kiểm tra trên trường — hoàn toàn miễn phí.",
     gradient: "gradient-warm",
   },
   {
     icon: GraduationCap,
-    title: "1 extra IELTS prep lesson — free",
-    desc: "Every IELTS student receives one bonus test preparation lesson to maximize their band score.",
+    title: "Tặng 1 buổi luyện đề IELTS",
+    desc: "Mỗi học viên IELTS được tặng thêm 1 buổi luyện đề chuyên sâu giúp tối đa hóa điểm số.",
     gradient: "gradient-pink",
   },
 ];
@@ -32,12 +32,12 @@ export const Benefits = () => {
     <section id="benefits" className="relative py-20 lg:py-28 gradient-soft">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Why families choose us</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Vì sao chọn chúng tôi</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Real <span className="text-gradient">benefits</span>, real value
+            <span className="text-gradient">Ưu đãi</span> thật, giá trị thật
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            We invest in our students with discounts, free materials, and extra preparation — every step of the way.
+            Chúng tôi đầu tư cho học viên bằng các ưu đãi, tài liệu miễn phí và các buổi học bổ sung — đồng hành cùng bạn trên mọi chặng đường.
           </p>
         </div>
 

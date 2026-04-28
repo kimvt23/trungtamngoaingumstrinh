@@ -3,12 +3,12 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#benefits", label: "Benefits" },
-  { href: "#courses", label: "Courses" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#branches", label: "Branches" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Giới thiệu" },
+  { href: "#benefits", label: "Ưu đãi" },
+  { href: "#courses", label: "Khóa học" },
+  { href: "#gallery", label: "Hình ảnh" },
+  { href: "#branches", label: "Chi nhánh" },
+  { href: "#contact", label: "Liên hệ" },
 ];
 
 export const Navbar = () => {
@@ -35,7 +35,7 @@ export const Navbar = () => {
             <Sparkles className="h-5 w-5" />
           </span>
           <span className="font-display text-lg font-extrabold tracking-tight">
-            Sunrise <span className="text-gradient">English</span>
+            Ms Trinh <span className="text-gradient">English</span>
           </span>
         </a>
 
@@ -56,7 +56,7 @@ export const Navbar = () => {
             href="#contact"
             className="inline-flex items-center rounded-full gradient-sunset px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-smooth hover:scale-105"
           >
-            Enroll Now
+            Đăng ký ngay
           </a>
         </div>
 
@@ -87,7 +87,7 @@ export const Navbar = () => {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full gradient-sunset px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
             >
-              Enroll Now
+              Đăng ký ngay
             </a>
           </nav>
         </div>
