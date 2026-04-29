@@ -6,12 +6,12 @@ import g5 from "@/assets/photo-w5.jpg";
 import g6 from "@/assets/photo-w6.jpg";
 
 const images = [
-  { src: g1, alt: "Học viên Ms Trinh nhận chứng nhận thành tích", className: "lg:col-span-2 lg:row-span-2" },
-  { src: g2, alt: "Học viên đạt điểm tối đa Cambridge" },
-  { src: g4, alt: "Hoạt động ngoại khóa cùng học sinh", className: "lg:row-span-2" },
-  { src: g5, alt: "Lớp học mầm non vui nhộn tại Ms Trinh" },
-  { src: g3, alt: "Hoạt động Halloween thú vị cho bé" },
-  { src: g6, alt: "Lớp học IELTS với giáo viên bản ngữ", className: "lg:col-span-2" },
+  { src: g1, alt: "Students receiving certificates", className: "lg:col-span-2 lg:row-span-2" },
+  { src: g2, alt: "Cambridge top score student" },
+  { src: g4, alt: "Outdoor activity with students", className: "lg:row-span-2" },
+  { src: g5, alt: "Fun kindergarten class" },
+  { src: g3, alt: "Halloween activity for kids" },
+  { src: g6, alt: "IELTS class with teacher", className: "lg:col-span-2" },
 ];
 
 export const Gallery = () => {
@@ -19,12 +19,12 @@ export const Gallery = () => {
     <section id="gallery" className="py-20 lg:py-28 gradient-soft">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Cộng đồng của chúng tôi</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Our community</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Khoảnh khắc tại <span className="text-gradient">lớp học</span>
+            Moments from <span className="bg-secondary/60 px-2 rounded">our classroom</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Bước vào Ms Trinh — học tập vui vẻ, tập trung và những thành tích đáng tự hào.
+            Step inside — joyful learning, focused practice and proud achievements.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const Gallery = () => {
                 height={1024}
                 className="h-full w-full object-cover transition-smooth group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
             </div>
           ))}
         </div>
