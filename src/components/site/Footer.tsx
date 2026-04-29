@@ -1,4 +1,5 @@
-import { Sparkles, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 export const Footer = () => {
   return (
@@ -6,10 +7,8 @@ export const Footer = () => {
       <div className="container-x">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl gradient-sunset text-primary-foreground shadow-glow">
-                <Sparkles className="h-5 w-5" />
-              </span>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Ms Trinh English Center" className="h-12 w-12 rounded-xl object-contain bg-white p-1" />
               <span className="font-display text-lg font-extrabold">Ms Trinh English</span>
             </div>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">

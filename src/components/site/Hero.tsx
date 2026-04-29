@@ -3,11 +3,11 @@ import heroImg from "@/assets/photo-w1.jpg";
 
 export const Hero = () => {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
-      {/* Decorative blobs */}
-      <div className="blob h-72 w-72 -top-10 -left-10 bg-primary animate-blob-move" />
-      <div className="blob h-80 w-80 top-40 -right-20 bg-accent animate-blob-move" style={{ animationDelay: "2s" }} />
-      <div className="blob h-64 w-64 bottom-0 left-1/3 bg-tertiary animate-blob-move" style={{ animationDelay: "4s" }} />
+    <section id="top" className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28 gradient-hero">
+      {/* Soft sunset blobs */}
+      <div className="blob h-72 w-72 -top-10 -left-10 bg-secondary animate-blob-move opacity-40" />
+      <div className="blob h-80 w-80 top-40 -right-20 bg-primary animate-blob-move opacity-25" style={{ animationDelay: "2s" }} />
+      <div className="blob h-64 w-64 bottom-0 left-1/3 bg-accent animate-blob-move opacity-30" style={{ animationDelay: "4s" }} />
 
       <div className="container-x relative grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6 animate-fade-in-up">
