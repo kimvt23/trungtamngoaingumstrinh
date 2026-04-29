@@ -1,61 +1,12 @@
 import { Trophy, Mic, Award, Baby, Smile, Users, ArrowRight, Clock, UserRound } from "lucide-react";
 
 const courses = [
-  {
-    icon: Trophy,
-    title: "IELTS",
-    tag: "General & Academic",
-    desc: "Luyện thi IELTS toàn diện 4 kỹ năng với đề thi thử, chiến lược làm bài và phản hồi cá nhân.",
-    duration: "4 tháng",
-    age: "Thanh thiếu niên & Người lớn",
-    extra: "Tặng 1 buổi luyện đề miễn phí",
-    gradient: "gradient-warm",
-  },
-  {
-    icon: Mic,
-    title: "Giao tiếp Người lớn",
-    tag: "Tự tin giao tiếp",
-    desc: "Tiếng Anh giao tiếp cho người đi làm — phát âm, chủ đề thực tế và kỹ năng thuyết trình.",
-    duration: "4 tháng",
-    age: "Người lớn 18+",
-    gradient: "gradient-pink",
-  },
-  {
-    icon: Award,
-    title: "Lớp Cambridge",
-    tag: "Starters · KET · PET",
-    desc: "Chứng chỉ Cambridge English được công nhận quốc tế giúp con bạn vươn ra thế giới.",
-    duration: "Theo học kỳ",
-    age: "7–14 tuổi",
-    gradient: "gradient-warm",
-  },
-  {
-    icon: Baby,
-    title: "Lớp Mầm non",
-    tag: "Bé yêu học tiếng Anh",
-    desc: "Bài hát, trò chơi và câu chuyện giúp bé làm quen tiếng Anh qua hoạt động vui nhộn.",
-    duration: "3 tháng",
-    age: "4–5 tuổi",
-    gradient: "gradient-pink",
-  },
-  {
-    icon: Smile,
-    title: "Lớp Thiếu nhi",
-    tag: "Nền tảng vững chắc",
-    desc: "Xây dựng vốn từ vựng, phát âm và ngữ pháp vững vàng qua các hoạt động vui nhộn, tương tác.",
-    duration: "3 tháng",
-    age: "6–10 tuổi",
-    gradient: "gradient-warm",
-  },
-  {
-    icon: Users,
-    title: "Lớp Thiếu niên",
-    tag: "Nâng cao trình độ",
-    desc: "Bài học dự án giúp củng cố cả 4 kỹ năng và chuẩn bị cho các kỳ thi quốc tế.",
-    duration: "3 tháng",
-    age: "11–14 tuổi",
-    gradient: "gradient-pink",
-  },
+  { icon: Trophy, title: "IELTS", tag: "General & Academic", desc: "Comprehensive IELTS training across all 4 skills with mock tests, strategy and personal feedback.", duration: "4 months", age: "Teens & Adults", extra: "1 free test lesson included" },
+  { icon: Mic, title: "Adult Communication", tag: "Speak with confidence", desc: "Practical English for working adults — pronunciation, real-life topics and presentation skills.", duration: "4 months", age: "Adults 18+" },
+  { icon: Award, title: "Cambridge", tag: "Starters · Movers · Flyers · KET · PET", desc: "Internationally recognized Cambridge English certificates that open the world for your child.", duration: "By term", age: "7–14 years" },
+  { icon: Baby, title: "Kindy", tag: "Little learners", desc: "Songs, games and stories that introduce English through joyful, playful activities.", duration: "3 months", age: "4–5 years" },
+  { icon: Smile, title: "Kids", tag: "Strong foundations", desc: "Build solid vocabulary, pronunciation and grammar through fun, interactive lessons.", duration: "3 months", age: "6–10 years" },
+  { icon: Users, title: "Teen", tag: "Level up", desc: "Project-based lessons that strengthen all 4 skills and prepare for international exams.", duration: "3 months", age: "11–14 years" },
 ];
 
 export const Courses = () => {
@@ -64,13 +15,13 @@ export const Courses = () => {
       <div className="container-x">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Khóa học</span>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Courses</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-              Chương trình cho <span className="text-gradient">mọi lứa tuổi & mục tiêu</span>
+              Programs for <span className="bg-secondary/60 px-2 rounded">every age & goal</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-md">
-            Từ những từ tiếng Anh đầu tiên của con đến IELTS Band 8 tự tin — chúng tôi có lớp phù hợp dành cho bạn.
+            From your child's first English words to a confident IELTS Band 8 — we have a class for you.
           </p>
         </div>
 
@@ -78,16 +29,16 @@ export const Courses = () => {
           {courses.map((c, i) => (
             <article
               key={c.title}
-              className="group relative overflow-hidden rounded-3xl bg-card border border-border p-7 shadow-soft transition-smooth hover:-translate-y-2 hover:shadow-card animate-fade-in-up"
+              className="group relative overflow-hidden rounded-3xl bg-card border border-border p-7 shadow-soft transition-smooth hover:-translate-y-2 hover:shadow-card hover:border-secondary animate-fade-in-up"
               style={{ animationDelay: `${i * 0.07}s` }}
             >
-              <div className={`absolute -top-12 -right-12 h-40 w-40 rounded-full ${c.gradient} opacity-15 blur-2xl transition-smooth group-hover:opacity-30`} />
+              <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-secondary opacity-10 blur-2xl transition-smooth group-hover:opacity-25" />
 
               <div className="flex items-start justify-between">
-                <span className={`grid h-14 w-14 place-items-center rounded-2xl ${c.gradient} text-primary-foreground shadow-glow transition-smooth group-hover:scale-110 group-hover:rotate-6`}>
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-secondary text-secondary-foreground shadow-glow transition-smooth group-hover:scale-110 group-hover:rotate-6">
                   <c.icon className="h-7 w-7" />
                 </span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right max-w-[55%]">
                   {c.tag}
                 </span>
               </div>
@@ -105,15 +56,15 @@ export const Courses = () => {
               </div>
 
               {c.extra && (
-                <div className="mt-4 flex items-start gap-2 rounded-2xl bg-primary/8 p-3 text-sm">
-                  <span className="mt-0.5 inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-primary font-semibold">Ưu đãi:</span>
+                <div className="mt-4 flex items-start gap-2 rounded-2xl bg-secondary/30 p-3 text-sm">
+                  <span className="mt-0.5 inline-block h-2 w-2 rounded-full bg-secondary animate-pulse" />
+                  <span className="font-semibold">Bonus:</span>
                   <span className="text-foreground/80">{c.extra}</span>
                 </div>
               )}
 
-              <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:gap-3 transition-all">
-                Đăng ký ngay <ArrowRight className="h-4 w-4" />
+              <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:gap-3 transition-all">
+                Enroll Now <ArrowRight className="h-4 w-4" />
               </a>
             </article>
           ))}

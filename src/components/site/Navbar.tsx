@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const links = [
-  { href: "#about", label: "Giới thiệu" },
-  { href: "#benefits", label: "Ưu đãi" },
-  { href: "#courses", label: "Khóa học" },
-  { href: "#ielts", label: "Luyện IELTS" },
-  { href: "#gallery", label: "Hình ảnh" },
-  { href: "#branches", label: "Chi nhánh" },
-  { href: "#contact", label: "Liên hệ" },
+  { href: "#about", label: "About" },
+  { href: "#courses", label: "Courses" },
+  { href: "#ielts", label: "IELTS Practice" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#branches", label: "Branches" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -28,19 +27,20 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-smooth",
-        scrolled ? "bg-background/85 backdrop-blur-xl shadow-soft" : "bg-transparent"
+        scrolled ? "bg-background/90 backdrop-blur-xl shadow-soft" : "bg-transparent"
       )}
     >
       <div className="container-x flex h-18 items-center justify-between py-4">
         <a href="#top" className="flex items-center gap-3 group">
           <img
             src={logo}
-            alt="Ms Trinh English Center"
-            className="h-11 w-11 rounded-xl object-contain bg-white shadow-soft transition-smooth group-hover:scale-110"
+            alt="English Center logo"
+            className="h-11 w-11 object-contain transition-smooth group-hover:scale-110"
           />
-          <span className="font-display text-lg font-extrabold tracking-tight hidden sm:block">
-            Ms Trinh <span className="text-gradient">English</span>
-          </span>
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="font-display text-base font-extrabold tracking-tight">English Center</span>
+            <span className="text-[11px] text-muted-foreground">Learn English with Confidence</span>
+          </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -48,7 +48,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-smooth relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-smooth relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-secondary after:transition-all hover:after:w-full"
             >
               {l.label}
             </a>
@@ -58,9 +58,9 @@ export const Navbar = () => {
         <div className="hidden lg:block">
           <a
             href="#contact"
-            className="inline-flex items-center rounded-full gradient-sunset px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-smooth hover:scale-105"
+            className="inline-flex items-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
           >
-            Đăng ký ngay
+            Enroll Now
           </a>
         </div>
 
@@ -89,9 +89,9 @@ export const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full gradient-sunset px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-glow"
             >
-              Đăng ký ngay
+              Enroll Now
             </a>
           </nav>
         </div>
