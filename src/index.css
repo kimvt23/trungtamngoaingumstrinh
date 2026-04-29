@@ -4,56 +4,57 @@
 
 @layer base {
   :root {
-    /* Sunrise palette - Sunset Blaze */
-    --background: 30 50% 99%;
-    --foreground: 250 30% 12%;
+    /* Brand palette — clean white, soft yellow, warm sunset orange */
+    --background: 0 0% 100%;
+    --foreground: 222 32% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 250 30% 12%;
+    --card-foreground: 222 32% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 30% 12%;
+    --popover-foreground: 222 32% 14%;
 
-    /* Primary: vivid orange */
-    --primary: 17 100% 60%;
+    /* Primary: warm sunset orange (brand red-orange from logo) */
+    --primary: 18 92% 54%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: amber/gold */
-    --secondary: 35 95% 55%;
-    --secondary-foreground: 250 30% 12%;
+    /* Secondary: soft brand yellow (logo) */
+    --secondary: 48 100% 62%;
+    --secondary-foreground: 222 32% 14%;
 
-    /* Accent: hot pink */
-    --accent: 330 76% 58%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: warm amber */
+    --accent: 35 95% 58%;
+    --accent-foreground: 222 32% 14%;
 
-    /* Tertiary: indigo violet */
-    --tertiary: 252 56% 57%;
+    /* Tertiary: deep navy charcoal for text emphasis */
+    --tertiary: 222 38% 18%;
     --tertiary-foreground: 0 0% 100%;
 
-    --muted: 25 30% 96%;
-    --muted-foreground: 250 12% 42%;
+    --muted: 40 40% 97%;
+    --muted-foreground: 222 12% 42%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 30% 90%;
-    --input: 25 30% 90%;
-    --ring: 17 100% 60%;
+    --border: 40 25% 90%;
+    --input: 40 25% 90%;
+    --ring: 18 92% 54%;
 
     --radius: 1rem;
 
-    /* Gradients */
-    --gradient-sunset: linear-gradient(135deg, hsl(17 100% 60%) 0%, hsl(35 95% 55%) 35%, hsl(330 76% 58%) 70%, hsl(252 56% 57%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(17 100% 60%), hsl(35 95% 55%));
-    --gradient-pink: linear-gradient(135deg, hsl(330 76% 58%), hsl(252 56% 57%));
-    --gradient-soft: linear-gradient(180deg, hsl(30 80% 98%), hsl(25 70% 95%));
-    --gradient-text: linear-gradient(135deg, hsl(17 100% 55%), hsl(330 76% 58%));
+    /* Gradients — soft sunset feel */
+    --gradient-sunset: linear-gradient(135deg, hsl(48 100% 70%) 0%, hsl(35 100% 65%) 50%, hsl(18 92% 58%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(35 100% 60%), hsl(18 92% 54%));
+    --gradient-pink: linear-gradient(135deg, hsl(48 100% 65%), hsl(18 92% 56%));
+    --gradient-soft: linear-gradient(180deg, hsl(48 100% 97%) 0%, hsl(30 100% 96%) 60%, hsl(0 0% 100%) 100%);
+    --gradient-hero: linear-gradient(160deg, hsl(48 100% 96%) 0%, hsl(30 100% 95%) 45%, hsl(0 0% 100%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(18 92% 50%), hsl(35 100% 55%));
 
     /* Shadows */
-    --shadow-glow: 0 20px 60px -15px hsl(17 100% 60% / 0.45);
-    --shadow-pink: 0 20px 60px -15px hsl(330 76% 58% / 0.4);
-    --shadow-card: 0 10px 40px -10px hsl(252 56% 30% / 0.12);
-    --shadow-soft: 0 4px 20px -4px hsl(252 56% 30% / 0.08);
+    --shadow-glow: 0 18px 50px -18px hsl(18 92% 54% / 0.4);
+    --shadow-pink: 0 18px 50px -18px hsl(35 100% 55% / 0.35);
+    --shadow-card: 0 12px 32px -14px hsl(222 38% 20% / 0.12);
+    --shadow-soft: 0 4px 18px -6px hsl(222 38% 20% / 0.08);
 
     /* Transitions */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -87,6 +88,7 @@
   .gradient-warm { background: var(--gradient-warm); }
   .gradient-pink { background: var(--gradient-pink); }
   .gradient-soft { background: var(--gradient-soft); }
+  .gradient-hero { background: var(--gradient-hero); }
 
   .text-gradient {
     background: var(--gradient-text);
