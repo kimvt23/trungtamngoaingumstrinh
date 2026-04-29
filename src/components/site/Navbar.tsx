@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.jpg";
 
 const links = [
   { href: "#about", label: "Giới thiệu" },
   { href: "#benefits", label: "Ưu đãi" },
   { href: "#courses", label: "Khóa học" },
+  { href: "#ielts", label: "Luyện IELTS" },
   { href: "#gallery", label: "Hình ảnh" },
   { href: "#branches", label: "Chi nhánh" },
   { href: "#contact", label: "Liên hệ" },
@@ -30,11 +32,13 @@ export const Navbar = () => {
       )}
     >
       <div className="container-x flex h-18 items-center justify-between py-4">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="grid h-10 w-10 place-items-center rounded-2xl gradient-sunset text-primary-foreground shadow-glow transition-smooth group-hover:scale-110">
-            <Sparkles className="h-5 w-5" />
-          </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">
+        <a href="#top" className="flex items-center gap-3 group">
+          <img
+            src={logo}
+            alt="Ms Trinh English Center"
+            className="h-11 w-11 rounded-xl object-contain bg-white shadow-soft transition-smooth group-hover:scale-110"
+          />
+          <span className="font-display text-lg font-extrabold tracking-tight hidden sm:block">
             Ms Trinh <span className="text-gradient">English</span>
           </span>
         </a>
