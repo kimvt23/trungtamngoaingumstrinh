@@ -1,22 +1,23 @@
 import { MapPin, Navigation } from "lucide-react";
-
-const branches = [
-  { code: "CN1", address: "218 Nguyen Huu Tho", city: "Ba Ria" },
-  { code: "CN2", address: "492 Dien Bien Phu, Long Toan", city: "Ba Ria" },
-  { code: "CN3", address: "420 Truong Cong Dinh", city: "Vung Tau" },
-];
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Branches = () => {
+  const { t } = useLang();
+  const branches = [
+    { code: "CN1", address: t("branches.cn1.address"), city: t("branches.cn1.city") },
+    { code: "CN2", address: t("branches.cn2.address"), city: t("branches.cn2.city") },
+    { code: "CN3", address: t("branches.cn3.address"), city: t("branches.cn3.city") },
+  ];
   return (
     <section id="branches" className="py-20 lg:py-28">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Find us</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("branches.kicker")}</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Three branches in <span className="bg-secondary/60 px-2 rounded">Ba Ria & Vung Tau</span>
+            {t("branches.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("branches.title.accent")}</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Visit the branch closest to you — we look forward to welcoming you.
+            {t("branches.desc")}
           </p>
         </div>
 
@@ -43,7 +44,7 @@ export const Branches = () => {
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-foreground hover:gap-3 transition-all"
               >
-                <Navigation className="h-4 w-4" /> Directions
+                <Navigation className="h-4 w-4" /> {t("branches.directions")}
               </a>
             </article>
           ))}
