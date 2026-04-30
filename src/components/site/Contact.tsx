@@ -2,14 +2,15 @@ import { useState } from "react";
 import { z } from "zod";
 import { Phone, Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
-
-const schema = z.object({
-  name: z.string().trim().min(1, "Please enter your name").max(80),
-  phone: z.string().trim().min(8, "Please enter a valid phone number").max(20),
-  message: z.string().trim().min(1, "Please enter a message").max(800),
-});
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Contact = () => {
+  const { t } = useLang();
+  const schema = z.object({
+    name: z.string().trim().min(1, t("contact.toast.name")).max(80),
+    phone: z.string().trim().min(8, t("contact.toast.phone")).max(20),
+    message: z.string().trim().min(1, t("contact.toast.message")).max(800),
+  });
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
@@ -17,12 +18,12 @@ export const Contact = () => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
-      toast.error(result.error.issues[0]?.message ?? "Please check your details");
+      toast.error(result.error.issues[0]?.message ?? t("contact.toast.name"));
       return;
     }
     setSubmitting(true);
     setTimeout(() => {
-      toast.success("Thank you! We will contact you very soon.");
+      toast.success(t("contact.toast.success"));
       setForm({ name: "", phone: "", message: "" });
       setSubmitting(false);
     }, 600);
@@ -36,12 +37,12 @@ export const Contact = () => {
       <div className="container-x relative">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           <div className="flex flex-col">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Contact</span>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("contact.kicker")}</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-              Ready to <span className="bg-secondary/60 px-2 rounded">enroll</span>? Send us a message.
+              {t("contact.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("contact.title.accent")}</span>{t("contact.title.tail")}
             </h2>
             <p className="mt-5 text-lg text-muted-foreground max-w-md">
-              Questions about courses, schedule or tuition? Send a message — our team replies within hours.
+              {t("contact.desc")}
             </p>
 
             <div className="mt-10 space-y-4">
@@ -53,7 +54,7 @@ export const Contact = () => {
                   <Phone className="h-6 w-6" />
                 </span>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">Call now</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">{t("contact.call")}</div>
                   <div className="font-display text-xl font-bold">0966 802 457</div>
                 </div>
               </a>
@@ -66,8 +67,8 @@ export const Contact = () => {
                   <MessageCircle className="h-6 w-6" />
                 </span>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">Message</div>
-                  <div className="font-display text-xl font-bold">Chat on Zalo</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">{t("contact.message")}</div>
+                  <div className="font-display text-xl font-bold">{t("contact.zalo")}</div>
                 </div>
               </a>
             </div>
@@ -77,22 +78,22 @@ export const Contact = () => {
             onSubmit={onSubmit}
             className="rounded-3xl bg-card border border-border p-7 sm:p-9 shadow-card"
           >
-            <h3 className="font-display text-2xl font-bold">Send a message</h3>
-            <p className="mt-1 text-sm text-muted-foreground">We'll reply within hours.</p>
+            <h3 className="font-display text-2xl font-bold">{t("contact.form.title")}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{t("contact.form.subtitle")}</p>
 
             <div className="mt-6 space-y-4">
               <div>
-                <label className="text-sm font-semibold">Full name</label>
+                <label className="text-sm font-semibold">{t("contact.form.name")}</label>
                 <input
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                   maxLength={80}
-                  placeholder="Your name"
+                  placeholder={t("contact.form.name.placeholder")}
                   className="mt-1.5 w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm transition-smooth focus:outline-none focus:ring-2 focus:ring-secondary"
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold">Phone number</label>
+                <label className="text-sm font-semibold">{t("contact.form.phone")}</label>
                 <input
                   value={form.phone}
                   onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
@@ -102,13 +103,13 @@ export const Contact = () => {
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold">Message</label>
+                <label className="text-sm font-semibold">{t("contact.form.message")}</label>
                 <textarea
                   value={form.message}
                   onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                   maxLength={800}
                   rows={4}
-                  placeholder="I'd like to learn more about the IELTS course..."
+                  placeholder={t("contact.form.message.placeholder")}
                   className="mt-1.5 w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm transition-smooth focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
                 />
               </div>
@@ -118,7 +119,7 @@ export const Contact = () => {
                 disabled={submitting}
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-7 py-4 text-base font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.02] disabled:opacity-70"
               >
-                {submitting ? "Sending..." : "Send message"}
+                {submitting ? t("contact.form.sending") : t("contact.form.send")}
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

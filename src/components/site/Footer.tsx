@@ -1,5 +1,6 @@
 import { Phone, MapPin, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useLang } from "@/i18n/LanguageContext";
 
 const TikTokIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
@@ -8,6 +9,7 @@ const TikTokIcon = ({ className = "" }: { className?: string }) => (
 );
 
 export const Footer = () => {
+  const { t } = useLang();
   return (
     <footer className="relative bg-foreground text-background pt-16 pb-8 mt-10">
       <div className="container-x">
@@ -18,7 +20,7 @@ export const Footer = () => {
               <span className="font-display text-lg font-extrabold">English Center</span>
             </div>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Helping learners of every age speak English with confidence — in Ba Ria & Vung Tau.
+              {t("footer.tagline")}
             </p>
             <div className="mt-5 flex gap-3">
               <a href="https://www.facebook.com/share/1HGhepyQvT/" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background/10 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
@@ -31,15 +33,16 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-base">Quick links</h4>
+            <h4 className="font-display font-bold text-base">{t("footer.quicklinks")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-background/70">
               {[
-                ["About", "#about"],
-                ["Courses", "#courses"],
-                ["IELTS Practice", "#ielts"],
-                ["Gallery", "#gallery"],
-                ["Branches", "#branches"],
-                ["Contact", "#contact"],
+                [t("nav.about"), "#about"],
+                [t("nav.courses"), "#courses"],
+                [t("nav.ielts"), "#ielts"],
+                [t("nav.gallery"), "#gallery"],
+                [t("nav.videos"), "#videos"],
+                [t("nav.branches"), "#branches"],
+                [t("nav.contact"), "#contact"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a href={href} className="hover:text-secondary transition-smooth">{label}</a>
@@ -49,28 +52,28 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-base">Courses</h4>
+            <h4 className="font-display font-bold text-base">{t("footer.courses")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-background/70">
-              {["IELTS","Adult Communication","Cambridge","Kindy","Kids","Teen"].map((c) => (
+              {[t("courses.1.title"), t("courses.2.title"), t("courses.3.title"), t("courses.4.title"), t("courses.5.title"), t("courses.6.title")].map((c) => (
                 <li key={c}><a href="#courses" className="hover:text-secondary transition-smooth">{c}</a></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-base">Contact</h4>
+            <h4 className="font-display font-bold text-base">{t("footer.contact")}</h4>
             <ul className="mt-4 space-y-3 text-sm text-background/70">
               <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-secondary" /> 0966 802 457</li>
-              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> 218 Nguyen Huu Tho, Ba Ria</li>
-              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> 492 Dien Bien Phu, Ba Ria</li>
-              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> 420 Truong Cong Dinh, Vung Tau</li>
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> {t("branches.cn1.address")}, {t("branches.cn1.city")}</li>
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> {t("branches.cn2.address")}, {t("branches.cn2.city")}</li>
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-secondary" /> {t("branches.cn3.address")}, {t("branches.cn3.city")}</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-background/50">
-          <p>© {new Date().getFullYear()} English Center. All rights reserved.</p>
-          <p>Proud to support learners in Vietnam ♥</p>
+          <p>© {new Date().getFullYear()} English Center. {t("footer.rights")}</p>
+          <p>{t("footer.love")}</p>
         </div>
       </div>
     </footer>

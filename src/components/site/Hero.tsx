@@ -1,8 +1,10 @@
 import { ArrowRight, PhoneCall, Star, Users, GraduationCap } from "lucide-react";
 import heroImg from "@/assets/photo-w1.jpg";
 import logo from "@/assets/logo.png";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Hero = () => {
+  const { t } = useLang();
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28 gradient-hero">
       <div className="blob h-72 w-72 -top-10 -left-10 bg-secondary animate-blob-move opacity-30" />
@@ -14,18 +16,18 @@ export const Hero = () => {
             <img src={logo} alt="English Center" className="h-12 w-12 object-contain" />
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary/40 px-4 py-1.5 text-sm font-semibold text-foreground">
               <Star className="h-4 w-4 fill-secondary text-secondary" />
-              Trusted by 300+ students
+              {t("hero.badge")}
             </span>
           </div>
           <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
-            Learn English with{" "}
+            {t("hero.title.main")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">Confidence</span>
+              <span className="relative z-10">{t("hero.title.accent")}</span>
               <span className="absolute inset-x-0 bottom-2 h-4 bg-secondary/60 -z-0 rounded" />
             </span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
-            Courses for all ages — from Kindy to Adults. IELTS, Cambridge, Communication and more, taught by passionate teachers in Ba Ria & Vung Tau.
+            {t("hero.subtitle")}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -33,7 +35,7 @@ export const Hero = () => {
               href="#courses"
               className="group inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-4 text-base font-semibold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
             >
-              Enroll Now
+              {t("hero.cta.courses")}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -41,15 +43,15 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 rounded-full border-2 border-foreground/15 bg-card px-7 py-4 text-base font-semibold text-foreground shadow-soft transition-smooth hover:border-secondary"
             >
               <PhoneCall className="h-5 w-5" />
-              Contact Us
+              {t("hero.cta.contact")}
             </a>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
             {[
-              { icon: Users, value: "300+", label: "Students" },
-              { icon: GraduationCap, value: "3+", label: "Years experience" },
-              { icon: Star, value: "4.9★", label: "Rating" },
+              { icon: Users, value: "300+", label: t("hero.stat.students") },
+              { icon: GraduationCap, value: "3+", label: t("hero.stat.years") },
+              { icon: Star, value: "4.9★", label: t("hero.stat.rating") },
             ].map((s, i) => (
               <div key={s.label} className="animate-fade-in" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
                 <div className="font-display text-3xl font-extrabold">{s.value}</div>
@@ -74,8 +76,8 @@ export const Hero = () => {
                 <GraduationCap className="h-5 w-5" />
               </span>
               <div>
-                <div className="text-xs text-muted-foreground">Average IELTS</div>
-                <div className="font-display font-bold">7.5+ band</div>
+                <div className="text-xs text-muted-foreground">{t("hero.float.ielts.label")}</div>
+                <div className="font-display font-bold">{t("hero.float.ielts.value")}</div>
               </div>
             </div>
             <div className="absolute -right-2 bottom-10 hidden sm:flex items-center gap-3 rounded-2xl bg-card px-4 py-3 shadow-card animate-float border border-border" style={{ animationDelay: "1.5s" }}>
@@ -83,8 +85,8 @@ export const Hero = () => {
                 <Star className="h-5 w-5 fill-current" />
               </span>
               <div>
-                <div className="text-xs text-muted-foreground">Parent rating</div>
-                <div className="font-display font-bold">4.9 / 5.0</div>
+                <div className="text-xs text-muted-foreground">{t("hero.float.parent.label")}</div>
+                <div className="font-display font-bold">{t("hero.float.parent.value")}</div>
               </div>
             </div>
           </div>
