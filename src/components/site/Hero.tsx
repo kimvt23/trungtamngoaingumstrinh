@@ -19,14 +19,14 @@ export const Hero = () => {
               {t("hero.badge")}
             </span>
           </div>
-          <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
+          <h1 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
             {t("hero.title.main")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">{t("hero.title.accent")}</span>
               <span className="absolute inset-x-0 bottom-2 h-4 bg-secondary/60 -z-0 rounded" />
             </span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
             {t("hero.subtitle")}
           </p>
 
