@@ -1,23 +1,24 @@
 import { BadgePercent, BookOpen, ClipboardCheck, GraduationCap } from "lucide-react";
-
-const benefits = [
-  { icon: BadgePercent, title: "10% off in special months", desc: "Enjoy attractive promotions of up to 10% off tuition during selected months of the year." },
-  { icon: BookOpen, title: "Free learning materials", desc: "Receive textbooks, workbooks and online resources for free during special enrollment periods." },
-  { icon: ClipboardCheck, title: "Free school exam review", desc: "Special review sessions to help students prepare for school tests — completely free." },
-  { icon: GraduationCap, title: "1 free IELTS test lesson", desc: "Every IELTS student gets one extra in-depth practice session to maximize their score." },
-];
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Benefits = () => {
+  const { t } = useLang();
+  const benefits = [
+    { icon: BadgePercent, title: t("benefits.1.title"), desc: t("benefits.1.desc") },
+    { icon: BookOpen, title: t("benefits.2.title"), desc: t("benefits.2.desc") },
+    { icon: ClipboardCheck, title: t("benefits.3.title"), desc: t("benefits.3.desc") },
+    { icon: GraduationCap, title: t("benefits.4.title"), desc: t("benefits.4.desc") },
+  ];
   return (
     <section id="benefits" className="relative py-20 lg:py-28 gradient-soft">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Why choose us</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("benefits.kicker")}</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Real <span className="bg-secondary/60 px-2 rounded">benefits</span>, real value
+            {t("benefits.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("benefits.title.accent")}</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            We invest in our students with promotions, free materials and bonus sessions — supporting you every step of the way.
+            {t("benefits.desc")}
           </p>
         </div>
 
