@@ -38,10 +38,10 @@ export const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           <div className="flex flex-col">
             <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("contact.kicker")}</span>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
               {t("contact.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("contact.title.accent")}</span>{t("contact.title.tail")}
             </h2>
-            <p className="mt-5 text-lg text-muted-foreground max-w-md">
+            <p className="mt-4 text-base text-muted-foreground max-w-md">
               {t("contact.desc")}
             </p>
 
@@ -117,7 +117,7 @@ export const Contact = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-7 py-4 text-base font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.02] disabled:opacity-70"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.02] disabled:opacity-70"
               >
                 {submitting ? t("contact.form.sending") : t("contact.form.send")}
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />

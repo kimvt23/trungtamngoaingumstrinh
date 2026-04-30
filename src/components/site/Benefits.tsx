@@ -14,10 +14,10 @@ export const Benefits = () => {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("benefits.kicker")}</span>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
             {t("benefits.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("benefits.title.accent")}</span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
+          <p className="mt-3 text-muted-foreground text-base">
             {t("benefits.desc")}
           </p>
         </div>

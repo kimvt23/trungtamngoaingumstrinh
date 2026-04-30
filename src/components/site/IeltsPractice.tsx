@@ -473,7 +473,7 @@ export const IeltsPractice = () => {
             <Headphones className="h-4 w-4" />
             IELTS Listening Practice
           </span>
-          <h2 className="mt-5 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl font-bold leading-tight">
             Practice the <span className="bg-secondary/60 px-2 rounded">real IELTS</span> format
           </h2>
           <p className="mt-4 text-muted-foreground">
