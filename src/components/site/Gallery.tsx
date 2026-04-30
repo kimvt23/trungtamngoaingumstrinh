@@ -4,6 +4,7 @@ import g3 from "@/assets/photo-w3.jpg";
 import g4 from "@/assets/photo-w4.jpg";
 import g5 from "@/assets/photo-w5.jpg";
 import g6 from "@/assets/photo-w6.jpg";
+import { useLang } from "@/i18n/LanguageContext";
 
 const images = [
   { src: g1, alt: "Students receiving certificates", className: "lg:col-span-2 lg:row-span-2" },
@@ -15,16 +16,17 @@ const images = [
 ];
 
 export const Gallery = () => {
+  const { t } = useLang();
   return (
     <section id="gallery" className="py-20 lg:py-28 gradient-soft">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Our community</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("gallery.kicker")}</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-            Moments from <span className="bg-secondary/60 px-2 rounded">our classroom</span>
+            {t("gallery.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("gallery.title.accent")}</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Step inside — joyful learning, focused practice and proud achievements.
+            {t("gallery.desc")}
           </p>
         </div>
 
