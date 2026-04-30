@@ -4,6 +4,8 @@ import g3 from "@/assets/photo-w3.jpg";
 import g4 from "@/assets/photo-w4.jpg";
 import g5 from "@/assets/photo-w5.jpg";
 import g6 from "@/assets/photo-w6.jpg";
+import g7 from "@/assets/photo-w7.jpg";
+import g8 from "@/assets/photo-w8.jpg";
 import { useLang } from "@/i18n/LanguageContext";
 
 const images = [
@@ -13,6 +15,8 @@ const images = [
   { src: g5, alt: "Fun kindergarten class" },
   { src: g3, alt: "Halloween activity for kids" },
   { src: g6, alt: "IELTS class with teacher", className: "lg:col-span-2" },
+  { src: g7, alt: "Students showing their drawings in class" },
+  { src: g8, alt: "Group study activity in classroom", className: "lg:col-span-2" },
 ];
 
 export const Gallery = () => {
