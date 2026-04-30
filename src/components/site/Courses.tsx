@@ -1,27 +1,30 @@
 import { Trophy, Mic, Award, Baby, Smile, Users, ArrowRight, Clock, UserRound } from "lucide-react";
-
-const courses = [
-  { icon: Trophy, title: "IELTS", tag: "General & Academic", desc: "Comprehensive IELTS training across all 4 skills with mock tests, strategy and personal feedback.", duration: "4 months", age: "Teens & Adults", extra: "1 free test lesson included" },
-  { icon: Mic, title: "Adult Communication", tag: "Speak with confidence", desc: "Practical English for working adults — pronunciation, real-life topics and presentation skills.", duration: "4 months", age: "Adults 18+" },
-  { icon: Award, title: "Cambridge", tag: "Starters · Movers · Flyers · KET · PET", desc: "Internationally recognized Cambridge English certificates that open the world for your child.", duration: "By term", age: "7–14 years" },
-  { icon: Baby, title: "Kindy", tag: "Little learners", desc: "Songs, games and stories that introduce English through joyful, playful activities.", duration: "3 months", age: "4–5 years" },
-  { icon: Smile, title: "Kids", tag: "Strong foundations", desc: "Build solid vocabulary, pronunciation and grammar through fun, interactive lessons.", duration: "3 months", age: "6–10 years" },
-  { icon: Users, title: "Teen", tag: "Level up", desc: "Project-based lessons that strengthen all 4 skills and prepare for international exams.", duration: "3 months", age: "11–14 years" },
-];
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Courses = () => {
+  const { t } = useLang();
+  const icons = [Trophy, Mic, Award, Baby, Smile, Users];
+  const courses = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+    icon: icons[i],
+    title: t(`courses.${n}.title`),
+    tag: t(`courses.${n}.tag`),
+    desc: t(`courses.${n}.desc`),
+    duration: t(`courses.${n}.duration`),
+    age: t(`courses.${n}.age`),
+    extra: n === 1 ? t("courses.1.extra") : undefined,
+  }));
   return (
     <section id="courses" className="py-20 lg:py-28">
       <div className="container-x">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Courses</span>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("courses.kicker")}</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-              Programs for <span className="bg-secondary/60 px-2 rounded">every age & goal</span>
+              {t("courses.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("courses.title.accent")}</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-md">
-            From your child's first English words to a confident IELTS Band 8 — we have a class for you.
+            {t("courses.intro")}
           </p>
         </div>
 
@@ -58,13 +61,13 @@ export const Courses = () => {
               {c.extra && (
                 <div className="mt-4 flex items-start gap-2 rounded-2xl bg-secondary/30 p-3 text-sm">
                   <span className="mt-0.5 inline-block h-2 w-2 rounded-full bg-secondary animate-pulse" />
-                  <span className="font-semibold">Bonus:</span>
+                  <span className="font-semibold">{t("courses.bonus")}</span>
                   <span className="text-foreground/80">{c.extra}</span>
                 </div>
               )}
 
               <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:gap-3 transition-all">
-                Enroll Now <ArrowRight className="h-4 w-4" />
+                {t("courses.cta")} <ArrowRight className="h-4 w-4" />
               </a>
             </article>
           ))}
