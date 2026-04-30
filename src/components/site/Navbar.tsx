@@ -20,7 +20,6 @@ export const Navbar = () => {
     { href: "#courses", label: t("nav.courses") },
     { href: "#ielts", label: t("nav.ielts") },
     { href: "#gallery", label: t("nav.gallery") },
-    { href: "#videos", label: t("nav.videos") },
     { href: "#branches", label: t("nav.branches") },
     { href: "#contact", label: t("nav.contact") },
   ];
