@@ -11,7 +11,7 @@ export const About = () => {
           <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
             {t("about.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("about.title.accent")}</span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
             {t("about.desc")}
           </p>
 

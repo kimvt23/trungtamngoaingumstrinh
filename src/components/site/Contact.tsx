@@ -41,7 +41,7 @@ export const Contact = () => {
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
               {t("contact.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("contact.title.accent")}</span>{t("contact.title.tail")}
             </h2>
-            <p className="mt-5 text-lg text-muted-foreground max-w-md">
+            <p className="mt-4 text-base text-muted-foreground max-w-md">
               {t("contact.desc")}
             </p>
 

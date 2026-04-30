@@ -16,7 +16,7 @@ export const Branches = () => {
           <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
             {t("branches.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("branches.title.accent")}</span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
+          <p className="mt-3 text-muted-foreground text-base">
             {t("branches.desc")}
           </p>
         </div>
