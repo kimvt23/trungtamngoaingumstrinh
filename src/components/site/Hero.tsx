@@ -33,14 +33,14 @@ export const Hero = () => {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#courses"
-              className="group inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-4 text-base font-semibold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
+              className="group inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
             >
               {t("hero.cta.courses")}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground/15 bg-card px-7 py-4 text-base font-semibold text-foreground shadow-soft transition-smooth hover:border-secondary"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground/15 bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-soft transition-smooth hover:border-secondary"
             >
               <PhoneCall className="h-5 w-5" />
               {t("hero.cta.contact")}

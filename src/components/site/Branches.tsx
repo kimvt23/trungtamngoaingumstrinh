@@ -13,7 +13,7 @@ export const Branches = () => {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("branches.kicker")}</span>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl font-extrabold leading-tight">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
             {t("branches.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("branches.title.accent")}</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
