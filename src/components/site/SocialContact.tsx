@@ -22,7 +22,7 @@ export const SocialContact = () => {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
-            href="https://www.facebook.com/share/16hLSiGnav/"
+            href="https://www.facebook.com/tienganhcotrinh.asara"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-full bg-card border border-border px-6 py-3 text-sm font-bold shadow-soft transition-smooth hover:-translate-y-0.5 hover:border-secondary hover:shadow-card"
