@@ -90,7 +90,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="https://www.facebook.com/share/1HGhepyQvT/" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
+          <a href="https://www.facebook.com/tienganhcotrinh.asara" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
             <Facebook className="h-4 w-4" />
           </a>
           <a href="https://www.tiktok.com/@mstrinhenglishcenter" target="_blank" rel="noreferrer" aria-label="TikTok" className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
@@ -131,7 +131,7 @@ export const Navbar = () => {
               </a>
             ))}
             <div className="flex items-center gap-3 px-3 py-2">
-              <a href="https://www.facebook.com/share/1HGhepyQvT/" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
+              <a href="https://www.facebook.com/tienganhcotrinh.asara" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
                 <Facebook className="h-4 w-4" />
               </a>
               <a href="https://www.tiktok.com/@mstrinhenglishcenter" target="_blank" rel="noreferrer" aria-label="TikTok" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">

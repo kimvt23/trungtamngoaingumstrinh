@@ -23,7 +23,7 @@ export const Footer = () => {
               {t("footer.tagline")}
             </p>
             <div className="mt-5 flex gap-3">
-              <a href="https://www.facebook.com/share/1HGhepyQvT/" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background/10 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
+              <a href="https://www.facebook.com/tienganhcotrinh.asara" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background/10 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
                 <Facebook className="h-4 w-4" />
               </a>
               <a href="https://www.tiktok.com/@mstrinhenglishcenter" target="_blank" rel="noreferrer" aria-label="TikTok" className="grid h-10 w-10 place-items-center rounded-full bg-background/10 hover:bg-secondary hover:text-secondary-foreground transition-smooth">
