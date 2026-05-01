@@ -8,6 +8,7 @@ import { IeltsReading } from "@/components/site/IeltsReading";
 import { Gallery } from "@/components/site/Gallery";
 import { Branches } from "@/components/site/Branches";
 import { Contact } from "@/components/site/Contact";
+import { BranchesMap } from "@/components/site/BranchesMap";
 import { SocialContact } from "@/components/site/SocialContact";
 import { NetlifyContactForm } from "@/components/site/NetlifyContactForm";
 import { Footer } from "@/components/site/Footer";
@@ -26,6 +27,7 @@ const Index = () => {
       <Branches />
       <Contact />
       <NetlifyContactForm />
+      <BranchesMap />
       <SocialContact />
       <Footer />
     </main>
