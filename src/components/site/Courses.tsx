@@ -44,7 +44,7 @@ export const Courses = () => {
           {courses.map((c, i) => (
             <article
               key={c.title}
-              className="group relative overflow-hidden rounded-3xl bg-card border border-border p-7 shadow-soft transition-smooth hover:-translate-y-2 hover:shadow-card hover:border-secondary animate-fade-in-up"
+              className="group relative overflow-hidden rounded-3xl bg-card border border-border p-7 shadow-soft transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-glow hover:border-secondary animate-fade-in-up"
               style={{ animationDelay: `${i * 0.07}s` }}
             >
               <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-secondary opacity-10 blur-2xl transition-smooth group-hover:opacity-25" />
