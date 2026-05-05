@@ -1,18 +1,30 @@
+import { useState } from "react";
 import { Trophy, Mic, Award, Baby, Smile, Users, ArrowRight, Clock, UserRound } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export const Courses = () => {
   const { t } = useLang();
+  const [openId, setOpenId] = useState<number | null>(null);
   const icons = [Trophy, Mic, Award, Baby, Smile, Users];
   const courses = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+    id: n,
     icon: icons[i],
     title: t(`courses.${n}.title`),
     tag: t(`courses.${n}.tag`),
     desc: t(`courses.${n}.desc`),
+    detail: t(`courses.${n}.detail`),
     duration: t(`courses.${n}.duration`),
     age: t(`courses.${n}.age`),
     extra: n === 1 ? t("courses.1.extra") : undefined,
   }));
+  const active = courses.find((c) => c.id === openId);
   return (
     <section id="courses" className="py-20 lg:py-28">
       <div className="container-x">
@@ -47,7 +59,7 @@ export const Courses = () => {
               </div>
 
               <h3 className="mt-5 font-display text-2xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">{c.desc}</p>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-semibold">
@@ -66,12 +78,62 @@ export const Courses = () => {
                 </div>
               )}
 
-              <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:gap-3 transition-all">
-                {t("courses.cta")} <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setOpenId(c.id)}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
+                >
+                  {t("courses.detail")}
+                </button>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-foreground hover:gap-3 transition-all"
+                >
+                  {t("courses.cta")} <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </article>
           ))}
         </div>
+
+        <Dialog open={openId !== null} onOpenChange={(o) => !o && setOpenId(null)}>
+          <DialogContent className="max-w-lg rounded-3xl">
+            {active && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="font-display text-2xl">{active.title}</DialogTitle>
+                  <DialogDescription className="text-xs uppercase tracking-wider font-semibold">
+                    {active.tag}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-semibold">
+                    <Clock className="h-3.5 w-3.5" /> {active.duration}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-semibold">
+                    <UserRound className="h-3.5 w-3.5" /> {active.age}
+                  </span>
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed whitespace-pre-line">
+                  {active.detail}
+                </p>
+                {active.extra && (
+                  <div className="rounded-2xl bg-secondary/30 p-3 text-sm">
+                    <span className="font-semibold">{t("courses.bonus")}</span>{" "}
+                    <span>{active.extra}</span>
+                  </div>
+                )}
+                <a
+                  href="#contact"
+                  onClick={() => setOpenId(null)}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-105"
+                >
+                  {t("courses.cta")} <ArrowRight className="h-4 w-4" />
+                </a>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

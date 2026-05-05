@@ -3,8 +3,6 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Benefits } from "@/components/site/Benefits";
 import { Courses } from "@/components/site/Courses";
-import { IeltsPractice } from "@/components/site/IeltsPractice";
-import { IeltsReading } from "@/components/site/IeltsReading";
 import { Gallery } from "@/components/site/Gallery";
 import { Branches } from "@/components/site/Branches";
 import { Contact } from "@/components/site/Contact";
@@ -12,6 +10,8 @@ import { BranchesMap } from "@/components/site/BranchesMap";
 import { SocialContact } from "@/components/site/SocialContact";
 import { NetlifyContactForm } from "@/components/site/NetlifyContactForm";
 import { Footer } from "@/components/site/Footer";
+import { GeneralBenefits } from "@/components/site/GeneralBenefits";
+import { IeltsCta } from "@/components/site/IeltsCta";
 
 const Index = () => {
   return (
@@ -21,8 +21,8 @@ const Index = () => {
       <About />
       <Benefits />
       <Courses />
-      <IeltsPractice />
-      <IeltsReading />
+      <IeltsCta />
+      <GeneralBenefits />
       <Gallery />
       <Branches />
       <Contact />
