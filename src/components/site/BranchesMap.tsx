@@ -1,4 +1,5 @@
 import { MapPin, Navigation } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 type Branch = {
   code: string;
@@ -12,18 +13,19 @@ const BRANCHES: Branch[] = [
 ];
 
 export const BranchesMap = () => {
+  const { t } = useLang();
   return (
     <section id="branches-map" className="py-16">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">
-            Cơ sở
+            {t("bmap.kicker")}
           </span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold leading-tight">
-            Địa chỉ các <span className="bg-secondary/60 px-2 rounded">cơ sở</span>
+            {t("bmap.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("bmap.title.accent")}</span>
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Ghé thăm cơ sở gần bạn nhất — chúng tôi luôn sẵn sàng đón tiếp.
+            {t("bmap.desc")}
           </p>
         </div>
 
@@ -37,7 +39,7 @@ export const BranchesMap = () => {
               >
                 <div className="aspect-[4/3] w-full bg-muted">
                   <iframe
-                    title={`Bản đồ ${b.code}`}
+                    title={`${t("bmap.maptitle")} ${b.code}`}
                     src={`https://www.google.com/maps?q=${query}&output=embed`}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -62,7 +64,7 @@ export const BranchesMap = () => {
                     className="mt-5 inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.03]"
                   >
                     <Navigation className="h-4 w-4" />
-                    Chỉ đường
+                    {t("branches.directions")}
                   </a>
                 </div>
               </article>

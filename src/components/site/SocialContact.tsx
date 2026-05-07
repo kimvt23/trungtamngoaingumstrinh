@@ -1,4 +1,5 @@
 import { Facebook } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 const TikTokIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
@@ -7,16 +8,17 @@ const TikTokIcon = ({ className = "" }: { className?: string }) => (
 );
 
 export const SocialContact = () => {
+  const { t } = useLang();
   return (
     <section id="social" className="py-16">
       <div className="container-x">
         <div className="text-center max-w-xl mx-auto">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Kết nối</span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("social.kicker")}</span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold leading-tight">
-            Thông tin <span className="bg-secondary/60 px-2 rounded">liên hệ</span>
+            {t("social.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("social.title.accent")}</span>
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Theo dõi chúng tôi trên mạng xã hội để cập nhật lớp học, mẹo học tiếng Anh và ưu đãi mới nhất.
+            {t("social.desc")}
           </p>
         </div>
 

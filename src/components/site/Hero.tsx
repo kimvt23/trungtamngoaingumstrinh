@@ -45,7 +45,7 @@ export const Hero = () => {
               className="group inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-105 hover:brightness-105"
             >
               <Sparkles className="h-5 w-5" />
-              Đăng ký học thử miễn phí
+              {t("hero.cta.trial")}
             </a>
             <a
               href="#courses"
@@ -90,7 +90,7 @@ export const Hero = () => {
               <div className="font-display text-3xl sm:text-4xl font-extrabold text-foreground">
                 <AnimatedNumber value={98} suffix="%" />
               </div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Hài lòng</div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{t("hero.stat.satisfied")}</div>
               <div className="mt-2 h-1.5 w-full rounded-full bg-muted overflow-hidden">
                 <div
                   className="h-full bg-secondary rounded-full transition-all duration-[1800ms] ease-out"

@@ -24,14 +24,14 @@ export const IeltsCta = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-4 text-sm font-bold text-secondary-foreground shadow-glow transition-all duration-300 hover:scale-105 hover:brightness-105 whitespace-nowrap"
             >
-              <Play className="h-4 w-4" /> Bắt đầu luyện tập <ExternalLink className="h-4 w-4" />
+              <Play className="h-4 w-4" /> {t("ielts.cta.start")} <ExternalLink className="h-4 w-4" />
             </a>
           </div>
 
           <div className="relative mt-10 grid sm:grid-cols-2 gap-5">
             {[
-              { icon: Headphones, title: "IELTS Listening", desc: "4 phần · audio + đáp án chi tiết" },
-              { icon: BookOpen, title: "IELTS Reading", desc: "Multiple choice · True/False · Matching" },
+              { icon: Headphones, title: t("ielts.cta.listening.title"), desc: t("ielts.cta.listening.desc") },
+              { icon: BookOpen, title: t("ielts.cta.reading.title"), desc: t("ielts.cta.reading.desc") },
             ].map((c) => (
               <a
                 key={c.title}
