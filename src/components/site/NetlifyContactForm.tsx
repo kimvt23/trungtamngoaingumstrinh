@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const NetlifyContactForm = () => {
+  const { t } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +23,7 @@ export const NetlifyContactForm = () => {
     const message = (fd.get("message") as string)?.trim() ?? "";
 
     if (!name || !phone || !message) {
-      setError("Vui lòng điền đầy đủ thông tin.");
+      setError(t("nlf.error.required"));
       return;
     }
 
@@ -52,12 +54,12 @@ export const NetlifyContactForm = () => {
       <div className="container-x">
         <div className="mx-auto max-w-xl">
           <div className="text-center">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">Đăng ký</span>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/60">{t("nlf.kicker")}</span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold leading-tight">
-              Gửi <span className="bg-secondary/60 px-2 rounded">tin nhắn</span> cho chúng tôi
+              {t("nlf.title.main")} <span className="bg-secondary/60 px-2 rounded">{t("nlf.title.accent")}</span> {t("nlf.title.tail")}
             </h2>
             <p className="mt-3 text-base text-muted-foreground">
-              Để lại thông tin, đội ngũ trung tâm sẽ liên hệ với bạn sớm nhất.
+              {t("nlf.desc")}
             </p>
           </div>
 
@@ -65,7 +67,7 @@ export const NetlifyContactForm = () => {
             <div className="mt-8 rounded-3xl bg-secondary/15 border border-secondary/40 p-8 text-center shadow-soft">
               <CheckCircle2 className="mx-auto h-12 w-12 text-secondary-foreground" />
               <p className="mt-4 font-display text-xl font-bold">
-                Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.
+                {t("nlf.success")}
               </p>
             </div>
           ) : (
@@ -87,19 +89,19 @@ export const NetlifyContactForm = () => {
 
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="cf-name" className="text-sm font-semibold">Họ và tên</label>
+                  <label htmlFor="cf-name" className="text-sm font-semibold">{t("nlf.label.name")}</label>
                   <input
                     id="cf-name"
                     name="name"
                     type="text"
                     maxLength={80}
                     required
-                    placeholder="Nguyễn Văn A"
+                    placeholder={t("nlf.placeholder.name")}
                     className="mt-1.5 w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm transition-smooth focus:outline-none focus:ring-2 focus:ring-secondary"
                   />
                 </div>
                 <div>
-                  <label htmlFor="cf-phone" className="text-sm font-semibold">Số điện thoại</label>
+                  <label htmlFor="cf-phone" className="text-sm font-semibold">{t("nlf.label.phone")}</label>
                   <input
                     id="cf-phone"
                     name="phone"
@@ -111,14 +113,14 @@ export const NetlifyContactForm = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="cf-message" className="text-sm font-semibold">Tin nhắn</label>
+                  <label htmlFor="cf-message" className="text-sm font-semibold">{t("nlf.label.message")}</label>
                   <textarea
                     id="cf-message"
                     name="message"
                     rows={4}
                     maxLength={800}
                     required
-                    placeholder="Tôi muốn đăng ký khóa học IELTS..."
+                    placeholder={t("nlf.placeholder.message")}
                     className="mt-1.5 w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm transition-smooth focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
                   />
                 </div>
@@ -132,7 +134,7 @@ export const NetlifyContactForm = () => {
                   disabled={submitting}
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.02] disabled:opacity-70"
                 >
-                  {submitting ? "Đang gửi..." : "Gửi"}
+                  {submitting ? t("nlf.sending") : t("nlf.send")}
                   <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>

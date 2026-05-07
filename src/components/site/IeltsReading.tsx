@@ -178,7 +178,7 @@ const CheckButton = ({ onClick }: { onClick: () => void }) => (
     onClick={onClick}
     className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-glow transition-smooth hover:scale-[1.02]"
   >
-    Kiểm tra đáp án
+    Check answers
   </button>
 );
 
@@ -188,7 +188,7 @@ const ResetButton = ({ onClick }: { onClick: () => void }) => (
     onClick={onClick}
     className="inline-flex items-center justify-center rounded-full border border-border bg-background px-6 py-3 text-sm font-bold transition-smooth hover:border-secondary"
   >
-    Làm lại
+    Reset
   </button>
 );
 
@@ -465,10 +465,10 @@ export const IeltsReading = () => {
             <BookOpen className="h-4 w-4" /> IELTS Reading
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
-            Luyện tập <span className="bg-secondary/60 px-2 rounded">IELTS Reading</span>
+            Practice <span className="bg-secondary/60 px-2 rounded">IELTS Reading</span>
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Đọc đoạn văn bên dưới rồi hoàn thành 4 phần bài tập. Bấm "Kiểm tra đáp án" để xem điểm và giải thích.
+            Read the passage below and complete the 4 task parts. Click "Check answers" to see your score and explanations.
           </p>
         </div>
 
