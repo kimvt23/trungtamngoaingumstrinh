@@ -82,7 +82,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-smooth relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-secondary after:transition-all hover:after:w-full"
+              className="group relative inline-flex items-center rounded-xl px-3.5 py-2 text-sm font-semibold text-foreground/75 border border-transparent transition-all duration-300 ease-out hover:text-foreground hover:bg-secondary/20 hover:border-secondary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_hsl(var(--secondary)/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {l.label}
             </a>
