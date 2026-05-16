@@ -12,24 +12,27 @@ import { NetlifyContactForm } from "@/components/site/NetlifyContactForm";
 import { Footer } from "@/components/site/Footer";
 import { GeneralBenefits } from "@/components/site/GeneralBenefits";
 import { IeltsCta } from "@/components/site/IeltsCta";
+import { Reveal } from "@/components/site/Reveal";
+import { SignupPopup } from "@/components/site/SignupPopup";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-clip">
       <Navbar />
       <Hero />
-      <About />
-      <Benefits />
-      <Courses />
-      <IeltsCta />
-      <GeneralBenefits />
-      <Gallery />
-      <Branches />
-      <Contact />
-      <NetlifyContactForm />
-      <BranchesMap />
-      <SocialContact />
+      <Reveal variant="fade-up"><About /></Reveal>
+      <Reveal variant="zoom"><Benefits /></Reveal>
+      <Reveal variant="fade-up"><Courses /></Reveal>
+      <Reveal variant="slide-right"><IeltsCta /></Reveal>
+      <Reveal variant="fade-up"><GeneralBenefits /></Reveal>
+      <Reveal variant="zoom"><Gallery /></Reveal>
+      <Reveal variant="fade-up"><Branches /></Reveal>
+      <Reveal variant="fade"><Contact /></Reveal>
+      <Reveal variant="fade-up"><NetlifyContactForm /></Reveal>
+      <Reveal variant="zoom"><BranchesMap /></Reveal>
+      <Reveal variant="fade-up"><SocialContact /></Reveal>
       <Footer />
+      <SignupPopup />
     </main>
   );
 };
