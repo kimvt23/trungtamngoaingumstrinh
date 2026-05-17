@@ -16,9 +16,9 @@ export const Navbar = () => {
   const { lang, setLang, t } = useLang();
 
   const links = [
-    { href: "#about", label: t("nav.about") },
     { href: "#courses", label: t("nav.courses") },
     { href: "#ielts", label: t("nav.ielts") },
+    { href: "#about", label: t("nav.about") },
     { href: "#gallery", label: t("nav.gallery") },
     { href: "#branches", label: t("nav.branches") },
     { href: "#contact", label: t("nav.contact") },
