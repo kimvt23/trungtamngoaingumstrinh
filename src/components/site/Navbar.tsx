@@ -77,12 +77,12 @@ export const Navbar = () => {
           </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden md:flex flex-wrap items-center gap-2 lg:gap-3">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative inline-flex items-center rounded-xl px-3.5 py-2 text-sm font-semibold text-foreground/75 border border-transparent transition-all duration-300 ease-out hover:text-foreground hover:bg-secondary/20 hover:border-secondary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_hsl(var(--secondary)/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group relative inline-flex items-center rounded-xl px-3 lg:px-3.5 py-2 text-xs lg:text-sm font-semibold text-foreground/75 border border-transparent transition-all duration-300 ease-out hover:text-foreground hover:bg-secondary/20 hover:border-secondary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_hsl(var(--secondary)/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring whitespace-nowrap"
             >
               {l.label}
             </a>
@@ -108,7 +108,7 @@ export const Navbar = () => {
         <div className="lg:hidden flex items-center gap-2">
           <LangSwitch />
           <button
-            className="rounded-xl p-2 text-foreground"
+            className="md:hidden rounded-xl p-2 text-foreground"
             onClick={() => setOpen((o) => !o)}
             aria-label="Toggle menu"
           >
@@ -118,7 +118,7 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
           <nav className="container-x flex flex-col gap-1 py-4">
             {links.map((l) => (
               <a
