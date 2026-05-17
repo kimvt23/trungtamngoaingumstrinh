@@ -30,10 +30,7 @@ export const Reveal = ({ variant = "fade-up", delay = 0, className, children, ..
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setShown(true);
-            io.disconnect();
-          }
+          setShown(e.isIntersecting);
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
