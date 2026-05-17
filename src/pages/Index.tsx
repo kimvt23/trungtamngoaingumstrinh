@@ -8,7 +8,6 @@ import { Branches } from "@/components/site/Branches";
 import { Contact } from "@/components/site/Contact";
 import { BranchesMap } from "@/components/site/BranchesMap";
 import { SocialContact } from "@/components/site/SocialContact";
-import { NetlifyContactForm } from "@/components/site/NetlifyContactForm";
 import { Footer } from "@/components/site/Footer";
 import { GeneralBenefits } from "@/components/site/GeneralBenefits";
 import { IeltsCta } from "@/components/site/IeltsCta";
@@ -28,7 +27,6 @@ const Index = () => {
       <Reveal variant="zoom"><Gallery /></Reveal>
       <Reveal variant="fade-up"><Branches /></Reveal>
       <Reveal variant="fade"><Contact /></Reveal>
-      <Reveal variant="fade-up"><NetlifyContactForm /></Reveal>
       <Reveal variant="zoom"><BranchesMap /></Reveal>
       <Reveal variant="fade-up"><SocialContact /></Reveal>
       <Footer />
