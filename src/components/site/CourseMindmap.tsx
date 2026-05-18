@@ -70,7 +70,7 @@ export const CourseMindmap = () => {
         </Reveal>
 
         {/* Address table */}
-        <Reveal variant="fade-up">
+        {/* <Reveal variant="fade-up">
           <div className="mt-16 max-w-4xl mx-auto rounded-3xl border-2 border-secondary/40 bg-card p-6 sm:p-8 shadow-[0_24px_60px_-24px_hsl(var(--secondary)/0.45)]">
             <h3 className="font-display text-xl sm:text-2xl font-extrabold text-center mb-6">
               {lang === "vi" ? "Hệ thống cơ sở" : "Our branches"}
@@ -92,7 +92,7 @@ export const CourseMindmap = () => {
               ))}
             </div>
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
 
       <style>{`@keyframes dash { to { stroke-dashoffset: -100; } }`}</style>
