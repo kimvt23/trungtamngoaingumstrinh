@@ -55,8 +55,8 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-smooth",
-        scrolled ? "bg-background/90 backdrop-blur-xl shadow-soft" : "bg-transparent"
+        "fixed top-0 inset-x-0 z-50 transition-smooth hover:bg-background",
+        scrolled ? "bg-background/50 backdrop-blur-[3px] shadow-soft" : "bg-white"
       )}
     >
       <div className="container-x flex h-18 items-center justify-between py-4">
