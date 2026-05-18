@@ -53,6 +53,7 @@ export const Navbar = () => {
   }, []);
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-smooth hover:bg-background",
@@ -112,37 +113,36 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
-          <nav className="container-x flex flex-col gap-1 py-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted transition-smooth"
-              >
-                {l.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-3 px-3 py-2">
-              <a href="https://www.facebook.com/tienganhcotrinh.asara" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="https://www.tiktok.com/@mstrinhenglishcenter" target="_blank" rel="noreferrer" aria-label="TikTok" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
-                <TikTokIcon className="h-4 w-4" />
-              </a>
-            </div>
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-glow"
-            >
-              {t("nav.enroll")}
-            </a>
-          </nav>
-        </div>
-      )}
     </header>
+    <div className={`${open ? "top-16" : "top-[-100vh]"} z-40 transition-all duration-300 fixed w-screen md:hidden bg-background/85 backdrop-blur-[3px] border-t border-border`}>
+      <nav className="container-x flex flex-col gap-1 py-4">
+        {links.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            onClick={() => setOpen(false)}
+            className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted transition-smooth"
+          >
+            {l.label}
+          </a>
+        ))}
+        <div className="flex items-center gap-3 px-3 py-2">
+          <a href="https://www.facebook.com/tienganhcotrinh.asara" target="_blank" rel="noreferrer" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
+            <Facebook className="h-4 w-4" />
+          </a>
+          <a href="https://www.tiktok.com/@mstrinhenglishcenter" target="_blank" rel="noreferrer" aria-label="TikTok" className="grid h-10 w-10 place-items-center rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-smooth">
+            <TikTokIcon className="h-4 w-4" />
+          </a>
+        </div>
+        <a
+          href="#contact"
+          onClick={() => setOpen(false)}
+          className="mt-2 inline-flex items-center justify-center rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-glow"
+        >
+          {t("nav.enroll")}
+        </a>
+      </nav>
+    </div>
+    </>
   );
 };
