@@ -64,7 +64,7 @@ export const Navbar = () => {
           <img
             src={logo}
             alt="Ms. Trinh English Center logo"
-            className="h-11 w-11 object-contain transition-smooth group-hover:scale-110"
+            className="h-10 md:h-9 object-contain transition-smooth group-hover:scale-110"
           />
           <div className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-base font-extrabold tracking-tight">Ms. Trinh English Center</span>
