@@ -22,7 +22,7 @@ export const Navbar = () => {
   const LangSwitch = ({ className = "" }: { className?: string }) => (
     <div 
     onClick={() => {lang === "en" ? setLang("vi") : setLang("en")}}
-    className={cn("inline-flex items-center rounded-full border border-border bg-card p-0.5 text-xs font-bold", className)}>
+    className={cn("inline-flex items-center rounded-full border border-border bg-card p-0.5 text-xs font-bold cursor-pointer", className)}>
       <button
         className={cn(
           "rounded-full px-2.5 py-1 transition-smooth",
