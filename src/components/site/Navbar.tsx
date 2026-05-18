@@ -25,9 +25,10 @@ export const Navbar = () => {
   ];
 
   const LangSwitch = ({ className = "" }: { className?: string }) => (
-    <div className={cn("inline-flex items-center rounded-full border border-border bg-card p-0.5 text-xs font-bold", className)}>
+    <div 
+    onClick={() => {lang === "en" ? setLang("vi") : setLang("en")}}
+    className={cn("inline-flex items-center rounded-full border border-border bg-card p-0.5 text-xs font-bold", className)}>
       <button
-        onClick={() => setLang("vi")}
         className={cn(
           "rounded-full px-2.5 py-1 transition-smooth",
           lang === "vi" ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:text-foreground"
@@ -38,7 +39,6 @@ export const Navbar = () => {
       </button>
       <span className="px-0.5 text-muted-foreground/50">|</span>
       <button
-        onClick={() => setLang("en")}
         className={cn(
           "rounded-full px-2.5 py-1 transition-smooth",
           lang === "en" ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:text-foreground"
@@ -68,11 +68,11 @@ export const Navbar = () => {
         <a href="#top" className="flex items-center gap-3 group">
           <img
             src={logo}
-            alt="English Center logo"
+            alt="Ms. Trinh English Center logo"
             className="h-11 w-11 object-contain transition-smooth group-hover:scale-110"
           />
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display text-base font-extrabold tracking-tight">English Center</span>
+            <span className="font-display text-base font-extrabold tracking-tight">Ms. Trinh English Center</span>
             <span className="text-[11px] text-muted-foreground">{t("nav.tagline")}</span>
           </div>
         </a>
