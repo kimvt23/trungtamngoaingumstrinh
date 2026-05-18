@@ -56,7 +56,7 @@ export const Navbar = () => {
     <>
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-smooth hover:bg-background",
+        "fixed top-0 inset-x-0 z-50 transition-smooth hover:bg-background text-nowrap",
         scrolled ? `${open ? "md:bg-background/50 bg-background/85" : "bg-background/50" } backdrop-blur-[3px] shadow-soft` : "bg-white"
       )}
     >
@@ -73,12 +73,12 @@ export const Navbar = () => {
           </div>
         </a>
 
-        <nav className="hidden md:flex flex-wrap items-center gap-2 lg:gap-3">
+        <nav className="hidden md:flex items-center flex-nowrap gap-1 lg:gap-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative inline-flex items-center rounded-xl px-3 lg:px-3.5 py-2 text-xs lg:text-sm font-semibold text-foreground/75 border border-transparent transition-all duration-300 ease-out hover:text-foreground hover:bg-secondary/20 hover:border-secondary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_hsl(var(--secondary)/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring whitespace-nowrap"
+              className="group relative inline-flex items-center rounded-[5px] px-[1vw] py-2  lg:text-[1vw] md:text-[1.2vw] text-[1.5vw] font-semibold text-foreground/75 border border-transparent transition-colors duration-300 ease-out hover:text-foreground hover:bg-secondary/20 hover:border-secondary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_hsl(var(--secondary)/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring whitespace-nowrap"
             >
               {l.label}
             </a>
