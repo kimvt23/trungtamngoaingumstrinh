@@ -57,7 +57,7 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-smooth hover:bg-background",
-        scrolled ? "bg-background/50 backdrop-blur-[3px] shadow-soft" : "bg-white"
+        scrolled ? `${open ? "md:bg-background/50 bg-background/85" : "bg-background/50" } backdrop-blur-[3px] shadow-soft` : "bg-white"
       )}
     >
       <div className="container-x flex h-18 items-center justify-between py-4">
@@ -114,14 +114,14 @@ export const Navbar = () => {
       </div>
 
     </header>
-    <div className={`${open ? "top-16" : "top-[-100vh]"} z-40 transition-all duration-300 fixed w-screen md:hidden bg-background/85 backdrop-blur-[3px] border-t border-border`}>
+    <div className={`${open ? "top-16" : "top-[-100vh]"} z-40 transition-all duration-500 ease-in-out fixed w-screen md:hidden bg-background/85 backdrop-blur-[3px]`}>
       <nav className="container-x flex flex-col gap-1 py-4">
         {links.map((l) => (
           <a
             key={l.href}
             href={l.href}
             onClick={() => setOpen(false)}
-            className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted transition-smooth"
+            className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted border-2 border-transparent hover:border-black/20 transition-smooth"
           >
             {l.label}
           </a>
