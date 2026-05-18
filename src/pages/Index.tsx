@@ -1,5 +1,9 @@
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { HeroSlider } from "@/components/site/HeroSlider";
+import { Teachers } from "@/components/site/Teachers";
+import { Feedback } from "@/components/site/Feedback";
+import { CourseMindmap } from "@/components/site/CourseMindmap";
 import { About } from "@/components/site/About";
 import { Benefits } from "@/components/site/Benefits";
 import { Courses } from "@/components/site/Courses";
@@ -18,17 +22,21 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-clip">
       <Navbar />
+      <HeroSlider />
       <Hero />
       <Reveal variant="fade-up"><About /></Reveal>
       <Reveal variant="zoom"><Benefits /></Reveal>
       <Reveal variant="fade-up"><Courses /></Reveal>
+      <Teachers />
       <Reveal variant="slide-right"><IeltsCta /></Reveal>
       <Reveal variant="fade-up"><GeneralBenefits /></Reveal>
       <Reveal variant="zoom"><Gallery /></Reveal>
+      <Feedback />
       <Reveal variant="fade-up"><Branches /></Reveal>
       <Reveal variant="fade"><Contact /></Reveal>
       <Reveal variant="zoom"><BranchesMap /></Reveal>
       <Reveal variant="fade-up"><SocialContact /></Reveal>
+      <CourseMindmap />
       <Footer />
       <SignupPopup />
     </main>
