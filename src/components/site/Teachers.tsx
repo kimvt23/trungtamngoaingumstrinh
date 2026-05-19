@@ -19,7 +19,7 @@ const teachers = [
   },
   {
     name: "Ms Kim",
-    role: { vi: "Giáo viên TESOL", en: "TESOL Teacher" },
+    role: { vi: "Quản lý học thuật", en: "Head of Academics" },
     img: kim,
     desc: {
       vi: "Gần 7 năm kinh nghiệm đứng lớp. Tốt nghiệp loại giỏi ngành Giáo dục Tiểu học & THCS - Đại học Quốc tế Châu Âu Paris. Chứng chỉ TESOL. Chứng chỉ nghiệp vụ sư phạm bậc 5. Phương pháp giảng dạy sống động, sáng tạo, giúp học viên tự tin giao tiếp tiếng Anh.",
@@ -29,7 +29,7 @@ const teachers = [
   },
   {
     name: "Ms Vân",
-    role: { vi: "Giáo viên Ngôn ngữ Anh", en: "English Language Teacher" },
+    role: { vi: "", en: "" },
     img: van,
     desc: {
       vi: "Hơn 2 năm kinh nghiệm đứng lớp. Phương pháp giảng dạy sôi động, gần gũi và dễ hiểu. Tốt nghiệp loại giỏi ngành Ngôn ngữ Anh - Đại học Ngoại ngữ Tin học TP.HCM. Chứng chỉ TOEIC 895. Luôn tạo môi trường học tập tích cực và vui vẻ cho học viên.",
@@ -39,7 +39,7 @@ const teachers = [
   },
   {
     name: "Ms Nhi",
-    role: { vi: "Giáo viên Sư phạm Tiểu học", en: "Primary Education Teacher" },
+    role: { vi: "", en: "" },
     img: nhi,
     desc: {
       vi: "Tốt nghiệp ngành Sư phạm Tiểu học. 2 năm kinh nghiệm đứng lớp. Nhiệt tình, sôi nổi và thân thiện với học viên. Luôn tạo không khí học tập vui vẻ và truyền động lực cho học sinh.",
@@ -96,9 +96,11 @@ export const Teachers = () => {
                   </div>
                   <div className="mt-4">
                     <h3 className="font-display text-xl font-extrabold leading-tight">{t.name}</h3>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-secondary-foreground/80 mt-1">
-                      {t.role[lang]}
-                    </p>
+                    {t.role[lang] && (
+                      <p className="text-xs font-semibold uppercase tracking-widest text-secondary-foreground/80 mt-1">
+                        {t.role[lang]}
+                      </p>
+                    )}
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-5">
                       {t.desc[lang]}
                     </p>
