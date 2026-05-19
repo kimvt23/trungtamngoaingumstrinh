@@ -15,7 +15,7 @@ const teachers = [
       vi: "Giám đốc điều hành trung tâm. Tốt nghiệp loại giỏi ĐH Bách Khoa. Hơn 10 năm kinh nghiệm giảng dạy. Đã giúp đỡ hàng trăm học viên tiến bộ và yêu thích tiếng Anh. Phương pháp giảng dạy tận tâm, hiện đại và truyền cảm hứng cho học viên.",
       en: "Executive director. Graduated with honors from HCMC University of Technology. Over 10 years of teaching experience. Has helped hundreds of learners grow and love English through a dedicated, modern and inspiring approach.",
     },
-    tags: ["10+ năm", "ĐH Bách Khoa", "Lãnh đạo"],
+    tags: { vi: ["10+ năm", "ĐH Bách Khoa", "Lãnh đạo"], en: ["10+ years", "HCMUT", "Leadership"] },
   },
   {
     name: "Ms Kim",
@@ -25,7 +25,7 @@ const teachers = [
       vi: "Gần 7 năm kinh nghiệm đứng lớp. Tốt nghiệp loại giỏi ngành Giáo dục Tiểu học & THCS - Đại học Quốc tế Châu Âu Paris. Chứng chỉ TESOL. Chứng chỉ nghiệp vụ sư phạm bậc 5. Phương pháp giảng dạy sống động, sáng tạo, giúp học viên tự tin giao tiếp tiếng Anh.",
       en: "Almost 7 years of classroom experience. Honors graduate in Primary & Secondary Education from European International University Paris. TESOL certified, Level 5 pedagogy certificate. Lively and creative teaching style that builds confident English communicators.",
     },
-    tags: ["7 năm", "TESOL", "Sư phạm bậc 5"],
+    tags: { vi: ["7 năm", "TESOL", "Sư phạm bậc 5"], en: ["7 years", "TESOL", "Pedagogy L5"] },
   },
   {
     name: "Ms Vân",
@@ -35,7 +35,7 @@ const teachers = [
       vi: "Hơn 2 năm kinh nghiệm đứng lớp. Phương pháp giảng dạy sôi động, gần gũi và dễ hiểu. Tốt nghiệp loại giỏi ngành Ngôn ngữ Anh - Đại học Ngoại ngữ Tin học TP.HCM. Chứng chỉ TOEIC 895. Luôn tạo môi trường học tập tích cực và vui vẻ cho học viên.",
       en: "Over 2 years of teaching experience. Lively, friendly and easy-to-follow style. Honors graduate in English Linguistics from HUFLIT. TOEIC 895. Creates a positive and joyful learning environment for every student.",
     },
-    tags: ["TOEIC 895", "HUFLIT", "Năng động"],
+    tags: { vi: ["TOEIC 895", "HUFLIT", "Năng động"], en: ["TOEIC 895", "HUFLIT", "Energetic"] },
   },
   {
     name: "Ms Nhi",
@@ -45,7 +45,7 @@ const teachers = [
       vi: "Tốt nghiệp ngành Sư phạm Tiểu học. 2 năm kinh nghiệm đứng lớp. Nhiệt tình, sôi nổi và thân thiện với học viên. Luôn tạo không khí học tập vui vẻ và truyền động lực cho học sinh.",
       en: "Graduated in Primary Education. 2 years of classroom experience. Enthusiastic, energetic and friendly — keeps the classroom fun and motivating for every learner.",
     },
-    tags: ["Tiểu học", "Thân thiện", "Truyền động lực"],
+    tags: { vi: ["Tiểu học", "Thân thiện", "Truyền động lực"], en: ["Primary", "Friendly", "Motivating"] },
   },
 ];
 
@@ -105,7 +105,7 @@ export const Teachers = () => {
                       {t.desc[lang]}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-1.5">
-                      {t.tags.map((tag) => (
+                      {t.tags[lang].map((tag) => (
                         <span key={tag} className="rounded-full bg-secondary/25 px-2.5 py-0.5 text-[11px] font-semibold text-foreground">
                           {tag}
                         </span>
