@@ -1,15 +1,9 @@
 import { useLang } from "@/i18n/LanguageContext";
-import { MapPin, Sparkles, Star } from "lucide-react";
+import { MapPin, Sparkles } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { MindmapLines, PositionType } from "../atomic/molecules/MindmapLines";
 
-const courseNodes = [
-  { vi: "GT KIDS", en: "KIDS COMM", color: "from-pink-400 to-rose-500", glow: "rgba(244,114,182,0.55)" },
-  { vi: "GT MẦM NON", en: "PRESCHOOL COMM", color: "from-amber-300 to-yellow-500", glow: "rgba(250,204,21,0.6)" },
-  { vi: "GT TEEN", en: "TEEN COMM", color: "from-sky-400 to-cyan-500", glow: "rgba(56,189,248,0.55)" },
-  { vi: "IELTS", en: "IELTS", color: "from-violet-400 to-purple-600", glow: "rgba(167,139,250,0.55)" },
-  { vi: "NGỮ PHÁP", en: "GRAMMAR", color: "from-emerald-400 to-green-600", glow: "rgba(52,211,153,0.55)" },
-  { vi: "GT NGƯỜI LỚN", en: "ADULT COMM", color: "from-orange-400 to-red-500", glow: "rgba(251,146,60,0.55)" },
-];
+const nodes = ["GT KIDS", "GT MẦM NON", "GT TEEN", "IELTS", "NGỮ PHÁP", "GT NGƯỜI LỚN"];
 
 const addresses = [
   { label: "CN1", text: "492 Điện Biên Phủ, Long Toàn, Bà Rịa" },
@@ -17,28 +11,14 @@ const addresses = [
   { label: "CN3", text: "420 Trương Công Định, Vũng Tàu" },
 ];
 
-// Cloud bubble shape using SVG mask
-const CloudShape = ({ className = "", color }: { className?: string; color: string }) => (
-  <svg viewBox="0 0 200 130" className={className} preserveAspectRatio="none">
-    <defs>
-      <linearGradient id={`cg-${color}`} x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#fff" stopOpacity="0.95" />
-        <stop offset="100%" stopColor="#fff" stopOpacity="0.85" />
-      </linearGradient>
-    </defs>
-    <path
-      d="M50 100 Q20 100 20 75 Q5 70 15 50 Q15 30 40 32 Q45 10 75 18 Q90 0 115 12 Q140 0 155 25 Q185 25 185 55 Q200 70 180 90 Q180 110 150 105 Q130 125 100 110 Q70 125 50 100 Z"
-      fill={`url(#cg-${color})`}
-    />
-  </svg>
-);
-
 export const CourseMindmap = () => {
   const { lang } = useLang();
+  // 6 nodes around the center
   const radius = 220;
-  const center = { x: 320, y: 240 };
-  const positions = courseNodes.map((_, i) => {
-    const angle = (Math.PI * 2 * i) / courseNodes.length - Math.PI / 2;
+  const center: PositionType = { x: 320, y: 240 };
+  const positions: PositionType[] = nodes.map((_, i) => {
+    const angle = (Math.PI * 2 * i) / nodes.length - Math.PI / 2;
+    
     return {
       x: center.x + Math.cos(angle) * radius,
       y: center.y + Math.sin(angle) * radius,
@@ -47,12 +27,7 @@ export const CourseMindmap = () => {
 
   return (
     <section id="mindmap" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-secondary/10 to-background" />
-      <div className="blob h-72 w-72 top-10 -left-10 bg-secondary opacity-25" />
-      <div className="blob h-72 w-72 bottom-10 -right-10 bg-accent opacity-30" />
-      {/* Floating decorations */}
-      <Star className="absolute top-20 right-[12%] h-4 w-4 text-secondary animate-float" />
-      <Sparkles className="absolute bottom-32 left-[10%] h-5 w-5 text-accent animate-float" style={{ animationDelay: "1.2s" }} />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-secondary/5 to-background" />
 
       <div className="container-x">
         <Reveal variant="fade-up">
@@ -67,93 +42,35 @@ export const CourseMindmap = () => {
         </Reveal>
 
         <Reveal variant="zoom">
-          <div className="relative mx-auto max-w-3xl aspect-[4/3] sm:aspect-[640/480]">
-            <svg viewBox="0 0 640 480" className="w-full h-full">
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="hsl(var(--secondary))" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="hsl(47 96% 55%)" stopOpacity="1" />
-                  <stop offset="100%" stopColor="hsl(var(--secondary))" stopOpacity="0.3" />
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="4" result="b" />
-                  <feMerge>
-                    <feMergeNode in="b" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              {positions.map((p, i) => (
-                <path
-                  key={i}
-                  d={`M ${center.x} ${center.y} Q ${(center.x + p.x) / 2 + (i % 2 ? 30 : -30)} ${(center.y + p.y) / 2 + (i % 2 ? -30 : 30)} ${p.x} ${p.y}`}
-                  stroke="url(#lineGrad)"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeDasharray="6 8"
-                  strokeLinecap="round"
-                  filter="url(#glow)"
-                  style={{ animation: `dash 6s linear infinite`, animationDelay: `${i * 0.3}s` }}
-                />
-              ))}
-            </svg>
+          <div className="relative flex items-center justify-center mx-auto max-w-3xl aspect-[4/3] sm:aspect-[640/480]">
+            <MindmapLines center={center} positions={positions}/>
 
-            {/* Center cloud */}
+            {/* Center node */}
             <div
-              className="absolute -translate-x-1/2 -translate-y-1/2 animate-float"
-              style={{ left: `${(center.x / 640) * 100}%`, top: `${(center.y / 480) * 100}%`, width: "44%", maxWidth: 260 }}
+              className="rounded-[10px] md:rounded-md bg-secondary text-secondary-foreground px-2 md:px-5 py-1 md:py-3 font-display font-extrabold text-center shadow-[0_0_40px_-5px_hsl(var(--secondary))] animate-float text-[10px] md:text-sm max-w-[200px]"
             >
-              <div className="relative aspect-[200/130]">
-                <CloudShape color="center" className="absolute inset-0 w-full h-full drop-shadow-[0_10px_30px_hsl(var(--secondary)/0.7)]" />
-                <div className="absolute inset-0 grid place-items-center text-center px-6">
-                  <div>
-                    <Sparkles className="h-4 w-4 mx-auto text-secondary mb-1" />
-                    <div className="font-display text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
-                      {lang === "vi" ? "Trung tâm" : "Center"}
-                    </div>
-                    <div className="font-display text-sm sm:text-lg font-extrabold leading-tight">
-                      Ms TRINH
-                    </div>
-                    <div className="text-[10px] sm:text-xs font-semibold text-foreground/70">
-                      English Center
-                    </div>
-                  </div>
-                </div>
-              </div>
+              Trung Tâm Ngoại Ngữ<br />Ms TRINH
             </div>
 
-            {/* Course cloud nodes */}
+            {/* Surrounding nodes */}
             {positions.map((p, i) => (
               <div
                 key={i}
-                className="absolute -translate-x-1/2 -translate-y-1/2 animate-float group cursor-pointer"
+                className="absolute rounded-[10px] md:rounded-md bg-card border-2 border-secondary/60 px-3 py-2 text-[10px] md:text-sm font-bold shadow-[0_10px_30px_-10px_hsl(var(--secondary)/0.7)] hover:scale-110 hover:bg-secondary hover:text-secondary-foreground transition-all duration-1200 animate-float"
                 style={{
-                  left: `${(p.x / 640) * 100}%`,
-                  top: `${(p.y / 480) * 100}%`,
-                  width: "28%",
-                  maxWidth: 170,
+                  left: `${(p.x / 640) * 88}%`,
+                  top: `${(p.y / 480) * 98}%`,
                   animationDelay: `${i * 0.3}s`,
                 }}
               >
-                <div
-                  className="relative aspect-[200/130] transition-transform duration-300 group-hover:scale-110"
-                  style={{ filter: `drop-shadow(0 12px 24px ${courseNodes[i].glow})` }}
-                >
-                  <CloudShape color={`n${i}`} className="absolute inset-0 w-full h-full" />
-                  <div className={`absolute inset-[18%] rounded-full bg-gradient-to-br ${courseNodes[i].color} opacity-90`} />
-                  <div className="absolute inset-0 grid place-items-center text-center px-2">
-                    <span className="font-display text-[11px] sm:text-sm font-extrabold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)] leading-tight">
-                      {courseNodes[i][lang]}
-                    </span>
-                  </div>
-                </div>
+                {nodes[i]}
               </div>
             ))}
           </div>
         </Reveal>
 
         {/* Address table */}
-        <Reveal variant="fade-up">
+        {/* <Reveal variant="fade-up">
           <div className="mt-16 max-w-4xl mx-auto rounded-3xl border-2 border-secondary/40 bg-card p-6 sm:p-8 shadow-[0_24px_60px_-24px_hsl(var(--secondary)/0.45)]">
             <h3 className="font-display text-xl sm:text-2xl font-extrabold text-center mb-6">
               {lang === "vi" ? "Hệ thống cơ sở" : "Our branches"}
@@ -175,7 +92,7 @@ export const CourseMindmap = () => {
               ))}
             </div>
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
 
       <style>{`@keyframes dash { to { stroke-dashoffset: -100; } }`}</style>
